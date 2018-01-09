@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -22,4 +24,21 @@ public class Room {
 
     @Column(name = "ROOM_NUMBER")
     private long room_number;
+
+    @Column(name = "START_DATE")
+    private Date start_date;
+
+    @Column(name = "END_DATE")
+    private Date end_date;
+
+    public Date getStart_date() {
+        return start_date;
+    }
+    public Date getEnd_date(){
+        return end_date;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

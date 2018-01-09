@@ -24,5 +24,17 @@ public class Booking {
     @Column(name = "END_DATE")
     private Date end_date;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "ROOM_ID")
+    private Room room;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "KLIENT_ID")
+    private Customer customer;
+
+        public Date  getStartDate(){return start_date;}
+        public Date getEndDate(){return end_date;}
+        public Room getRoomId(){return room;}
+
 
 }
