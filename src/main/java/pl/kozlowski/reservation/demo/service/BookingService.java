@@ -12,7 +12,7 @@ public interface BookingService {
 
     Booking findReservationByRoomId(Integer id);
     Booking addReservation(String First_Name, String Surname, Long Phone, Date start_date, Date end_date, Room room) throws Exception;
-    void deleteReservation(Booking reservation);
+    void deleteReservation(Long id);
 
 
 

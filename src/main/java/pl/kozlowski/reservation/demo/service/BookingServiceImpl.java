@@ -41,7 +41,8 @@ public class BookingServiceImpl implements BookingService {
         }
 
     @Override
-    public void deleteReservation(Booking reservation) {
+    public void deleteReservation(Long id) {
+        bookingRepository.delete(id);
 
     }
 
