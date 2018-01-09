@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import pl.kozlowski.reservation.demo.model.Room;
 import pl.kozlowski.reservation.demo.service.BookingService;
-import pl.kozlowski.reservation.demo.service.CustomerService;
 import pl.kozlowski.reservation.demo.service.HotelRoomService;
 
 import java.util.List;

@@ -30,17 +30,29 @@ public class HotelRoomServiceImpl implements HotelRoomService {
         return hotelRepository.findAll();
     }
     @Override
-    public List<Booking> allRoomBookings(){return bookingRepository.findAll();}
+    public List<Booking> allRoomBookings(){
+        return bookingRepository.findAll();
+    }
 
     @Override
     public List<Room> ifRoomIsFree(Room pokoj, Date start_date, Date end_date) {
         List<Booking> bookings = allRoomBookings();
-        List<Room> temp = new ArrayList<>();
+        List<Room> room = new ArrayList<>();
+        int temp=0;
         for(Booking b: bookings){
-        if(b.getRoomId()=pokoj.getId()){
-
+            if(b.getRoomId().getId() == pokoj.getId()){
+                for(Booking c: bookings){
+                    if(start_date.after(c.getEndDate()) && end_date.before(c.getStartDate())){
+                    }
+                    else {
+                    temp = 1;
+                    break;
+                    }
+                }
+            }
         }
-        }
-
+    if(temp==0) room.add(pokoj);
+        temp = 0;
+        return room;
     }
 }

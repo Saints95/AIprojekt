@@ -18,6 +18,15 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "FIRST_NAME")
+    private String first_name;
+
+    @Column(name="LAST_NAME")
+    private String last_name;
+
+    @Column(name="PHONE")
+    private Long phone;
+
     @Column(name = "START_DATE")
     private Date start_date;
 
@@ -28,13 +37,28 @@ public class Booking {
     @Column(name = "ROOM_ID")
     private Room room;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "KLIENT_ID")
-    private Customer customer;
-
-        public Date  getStartDate(){return start_date;}
+        public Date getStartDate(){return start_date;}
         public Date getEndDate(){return end_date;}
         public Room getRoomId(){return room;}
 
+        public void setFirstName(String name){
+            first_name = name;
+        }
 
+        public void setLastName(String name){
+            last_name = name;
+        }
+        public void setPhone(Long p) {
+            phone = p;
+        }
+         public void setStart_date(Date d){
+            start_date = d;
+        }
+        public void setEnd_date(Date d) {
+            end_date = d;
+        }
+
+        public void setRoom(Room r){
+            room = r;
+        }
 }
