@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface HotelRepository extends JpaRepository<Room,Long>{
     List<Room> findBySize(String size);
+    List<Room> findAll();
 }

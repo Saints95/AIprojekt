@@ -23,9 +23,9 @@ public class BookingController {
 
 
     @GetMapping("/GetBySize/{size}")
-    public List<Room> Controller(@PathVariable(value = "size") String size) {
+    public List<Room> ShowAllRooms() {
 
-        return hotelRoomServ.getHotelRoomBySize(size);
+        return hotelRoomServ.findAllRooms();
     }
 
     @GetMapping("/isRoomFree")
