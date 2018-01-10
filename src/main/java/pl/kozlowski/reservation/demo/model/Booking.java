@@ -34,7 +34,7 @@ public class Booking {
     private Date end_date;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "ROOM_ID")
+    @JoinColumn(name = "ROOM_ID")
     private Room room;
 
         public Date getStartDate(){return start_date;}
@@ -51,7 +51,7 @@ public class Booking {
         public void setPhone(Long p) {
             phone = p;
         }
-         public void setStart_date(Date d){
+        public void setStart_date(Date d){
             start_date = d;
         }
         public void setEnd_date(Date d) {

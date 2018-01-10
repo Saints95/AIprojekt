@@ -38,21 +38,20 @@ public class HotelRoomServiceImpl implements HotelRoomService {
     public List<Room> ifRoomIsFree(Room pokoj, Date start_date, Date end_date) {
         List<Booking> bookings = allRoomBookings();
         List<Room> room = new ArrayList<>();
-        int temp=0;
+        boolean temp = false;
         for(Booking b: bookings){
             if(b.getRoomId().getId() == pokoj.getId()){
                 for(Booking c: bookings){
-                    if(start_date.after(c.getEndDate()) && end_date.before(c.getStartDate())){
-                    }
-                    else {
-                    temp = 1;
-                    break;
+                    if((start_date.before(c.getStartDate()) && end_date.before(c.getStartDate()))
+                            || (start_date.after(c.getEndDate()) && end_date.after(c.getEndDate()))){
+                        temp = true;
+                        break;
                     }
                 }
             }
         }
-    if(temp==0) room.add(pokoj);
-        temp = 0;
+    if(temp == true) room.add(pokoj);
+        temp = false;
         return room;
     }
 }
