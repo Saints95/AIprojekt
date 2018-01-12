@@ -13,8 +13,8 @@ import { HttpModule } from "@angular/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BookingModule,
-    HttpModule
+    HttpModule,
+    BookingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

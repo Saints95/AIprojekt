@@ -50,6 +50,7 @@ public class HotelRoomServiceImpl implements HotelRoomService {
                 }
             }
         }
+    if(bookings.size() == 0) temp = true;
     if(temp == true) room.add(pokoj);
         temp = false;
         return room;
