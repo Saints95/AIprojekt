@@ -21,20 +21,20 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking addReservation(String First_Name, String Surname, Long Phone, Date start_date, Date end_date, Room room) throws Exception {
+    public Booking addReservation(Booking book) throws Exception {
         Booking booking = new Booking();
         HotelRoomServiceImpl check = new HotelRoomServiceImpl();
         String r;
-        r = check.ifRoomIsFree(room,start_date,end_date);
-        booking.setFirstName(First_Name);
-        booking.setLastName(Surname);
-        booking.setPhone(Phone);
-        booking.setStart_date(start_date);
-        booking.setEnd_date(end_date);
+        r = check.ifRoomIsFree(book.getRoomId(),book.getStartDate(),book.getEndDate());
+        booking.setFirstName(book.getFirstName());
+        booking.setLastName(book.getLastName());
+        booking.setPhone(book.getPhone());
+        booking.setStart_date(book.getStartDate());
+        booking.setEnd_date(book.getEndDate());
         if(r == "Error") {
             throw new Exception();
         }
-        booking.setRoom(room);
+        booking.setRoom(book.getRoomId());
         return bookingRepository.save(booking);
         }
 

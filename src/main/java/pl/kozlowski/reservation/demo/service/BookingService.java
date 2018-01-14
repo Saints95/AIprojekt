@@ -10,7 +10,7 @@ import java.util.List;
 public interface BookingService {
 
 
-    Booking addReservation(String First_Name, String Surname, Long Phone, Date start_date, Date end_date, Room room) throws Exception;
+    Booking addReservation(Booking book) throws Exception;
     void deleteReservation(Long id);
     List<Booking> getAllBookings();
 

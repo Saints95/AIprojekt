@@ -27,16 +27,20 @@ public class BookingController {
         return hotelRoomServ.findAllRooms();
     }
 
+    @GetMapping("/GetHotelRoomById{id}")
+    public Room getRoomById(@PathVariable(value ="id") Long id) {
+
+        return hotelRoomServ.getHotelRoomById(id);
+    }
+
     @GetMapping("/isRoomFree")
     public String checkRoom(Room room, Date start_date, Date end_date){
         return hotelRoomServ.ifRoomIsFree(room,start_date,end_date);
     }
 
     @PostMapping("/Booking")
-    public Booking addReservation(String First_Name, String Surname, Long Phone, Date start_date, Date end_date, Room room) throws Exception{
-        Booking booking;
-        booking = bookingServ.addReservation(First_Name,Surname,Phone,start_date,end_date,room);
-        return booking;
+    public Booking addReservation(Booking book) throws Exception{
+        return bookingServ.addReservation(book);
     }
 
     @DeleteMapping("/deleteRoom/{id}")

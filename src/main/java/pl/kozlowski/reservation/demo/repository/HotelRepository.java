@@ -6,6 +6,6 @@ import pl.kozlowski.reservation.demo.model.Room;
 import java.util.List;
 
 public interface HotelRepository extends JpaRepository<Room,Long>{
-    List<Room> findBySize(String size);
+    Room findById(Long id);
     List<Room> findAll();
 }

@@ -40,6 +40,9 @@ public class Booking {
         public Date getStartDate(){return start_date;}
         public Date getEndDate(){return end_date;}
         public Room getRoomId(){return room;}
+        public String getFirstName(){return first_name;}
+        public String getLastName(){return last_name;}
+        public Long getPhone(){return phone;}
 
         public void setFirstName(String name){
             first_name = name;

@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface HotelRoomService {
-    List<Room> getHotelRoomBySize(String size);
+    Room getHotelRoomById(Long id);
     List<Room> findAllRooms();
     String ifRoomIsFree(Room room, Date start_date, Date end_date);
     List<Booking> allRoomBookings();

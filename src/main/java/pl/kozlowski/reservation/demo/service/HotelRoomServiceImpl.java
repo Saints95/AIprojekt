@@ -20,8 +20,8 @@ public class HotelRoomServiceImpl implements HotelRoomService {
     private BookingRepository bookingRepository;
 
     @Override
-    public List<Room> getHotelRoomBySize(String size) {
-       return hotelRepository.findBySize(size);
+    public Room getHotelRoomById(Long id) {
+       return hotelRepository.findById(id);
     }
 
     @Override
