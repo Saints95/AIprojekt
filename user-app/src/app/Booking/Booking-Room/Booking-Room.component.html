@@ -1,0 +1,64 @@
+<style>
+h1 {text-align:center;}
+h2 {text-align:center;}
+p {text-align:center;}
+
+table, th, td {
+    border: 1px solid black;
+   text-align: center;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div align="center">
+      <form novalidate [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+
+          <div class="form-group">
+            <label>Room ID</label>
+            <input type="text" class="form-control"
+                   formControlName="roomID">
+          </div>
+
+          <div class="form-group">
+            <label>Start date</label>
+            <input type="date"
+                   class="form-control"
+                   formControlName="startDate">
+          </div>
+
+           <div class="form-group">
+            <label>End date</label>
+            <input type="date"
+                   class="form-control"
+                   formControlName="endDate">
+            </div>
+
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control"
+                   formControlName="firstName">
+          </div>
+
+          <div class="form-group">
+            <label>Surname</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="lastName">
+          </div>
+
+           <div class="form-group">
+            <label>Phone number</label>
+            <input type="text"
+                   class="form-control"
+                   formControlName="phone">
+          </div>
+
+        </fieldset>
+        <table style="width:100%"><tr><th><button type="submit" class="btn btn-primary">Book a room</button></th></tr></table>
+      </form>
+  </div>
+</div>
+</div>
