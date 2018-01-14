@@ -1,6 +1,23 @@
+<style>
+h1 {text-align:center;}
+h2 {text-align:center;}
+p {text-align:center;}
+
+table, th, td, tr {
+    border: 1px solid black;
+   text-align: center;
+}
+</style>
+
+<h1>Room Booking System</h1>
+<h2>Choose action: </h2>
 
 <nav>
-  <button type="button"  class="btn btn-primary" routerLink="/Booking" routerLinkActive="active">REZERWACJE</button>
-  <button type="button"  class="btn btn-primary" routerLink="/deleteBooking" routerLinkActive="active">USUWANIE REZERWACJI</button>
+<table style="width:100%">
+	<th>
+<p><button type="button"  class="btn btn-primary" routerLink="/Booking" routerLinkActive="active">Book a room</button></p>
+<p><button type="button"  class="btn btn-primary" routerLink="/deleteBooking" routerLinkActive="active">Delete reservation</button></p>
+</th>
+</table>
 </nav>
 <router-outlet></router-outlet>

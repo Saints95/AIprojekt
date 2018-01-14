@@ -21,17 +21,15 @@ public class BookingController {
     @Autowired
     private BookingService bookingServ;
 
-
-    @GetMapping("/GetBySize/{size}")
+    @GetMapping("/GetAllRooms")
     public List<Room> ShowAllRooms() {
 
         return hotelRoomServ.findAllRooms();
     }
 
     @GetMapping("/isRoomFree")
-    public List<Room> checkRoom(Room pokoj, Date start_date, Date end_date){
-        List<Room> room = hotelRoomServ.ifRoomIsFree(pokoj,start_date,end_date);
-        return room;
+    public String checkRoom(Room room, Date start_date, Date end_date){
+        return hotelRoomServ.ifRoomIsFree(room,start_date,end_date);
     }
 
     @PostMapping("/Booking")
@@ -39,6 +37,16 @@ public class BookingController {
         Booking booking;
         booking = bookingServ.addReservation(First_Name,Surname,Phone,start_date,end_date,room);
         return booking;
+    }
+
+    @DeleteMapping("/deleteRoom/{id}")
+    public void deleteRoomById(@PathVariable(value ="id") Long id){
+        hotelRoomServ.deleteRoomById(id);
+    }
+
+    @GetMapping("/AllBookings")
+    public List<Booking> showAllBookings(){
+        return bookingServ.getAllBookings();
     }
 
     @DeleteMapping("/deleteBooking/{id}")

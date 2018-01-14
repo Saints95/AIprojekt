@@ -9,6 +9,7 @@ import java.util.List;
 public interface HotelRoomService {
     List<Room> getHotelRoomBySize(String size);
     List<Room> findAllRooms();
-    List<Room> ifRoomIsFree(Room pokoj, Date start_date, Date end_date);
+    String ifRoomIsFree(Room room, Date start_date, Date end_date);
     List<Booking> allRoomBookings();
+    void deleteRoomById(Long id);
 }

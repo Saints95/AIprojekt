@@ -8,5 +8,5 @@ import pl.kozlowski.reservation.demo.model.Room;
 import java.util.List;
 
 public interface BookingRepository extends JpaRepository<Booking,Long>{
-    List<Booking> findAllRookingsByRoom(Room room);
+    //List<Booking> findAllRookingsByRoom(Long room_id);
 }
